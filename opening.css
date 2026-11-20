@@ -121,3 +121,6 @@
   .gate .signature-label{top:78px}.gate .hold-label{top:101px}
   .gate .gate-status{font-size:1.05rem;margin-top:4px;min-height:2.5em}
 }
+
+/* The greeting receives focus for screen readers, without framing the title. */
+#greeting:focus{outline:none}

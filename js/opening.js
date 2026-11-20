@@ -135,6 +135,8 @@
       status.textContent = 'Una promesa. Miles de recuerdos.';
       sign.focus({ preventScroll: true });
     });
-    sign.focus({ preventScroll: true });
+    // Initial focus belongs to the dialog, not an automatically highlighted button.
+    // Tab still reaches every control and retains its visible keyboard outline.
+    gate.focus({ preventScroll: true });
   };
 })();
