@@ -1,0 +1,109 @@
+/* Phone layout only. Loaded last so the desktop and story modules stay independent. */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-padding-top:100px}
+@media(max-width:700px), (max-width:1000px) and (max-height:500px){
+ :root{--phone-left:max(16px,env(safe-area-inset-left,0px));--phone-right:max(16px,env(safe-area-inset-right,0px));--phone-top:env(safe-area-inset-top,0px);--phone-bottom:env(safe-area-inset-bottom,0px)}
+ body{overflow-wrap:break-word}
+ button,a,input{touch-action:manipulation}
+ .gate .signature-button{touch-action:none;-webkit-touch-callout:none}
+ .gate{padding:calc(72px + var(--phone-top)) var(--phone-right) calc(40px + var(--phone-bottom)) var(--phone-left);overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch}
+ .gate .parchment-mount{width:min(460px,100%);transform:none}
+ .gate .parchment{padding:24px clamp(18px,5vw,30px) 20px}
+ .gate .gate-corner{top:calc(21px + var(--phone-top));left:var(--phone-left);max-width:calc(100% - 160px);font-size:.6rem;line-height:1.6}
+ .opening-sound{top:calc(10px + var(--phone-top));right:var(--phone-right);min-height:48px;letter-spacing:.04em}
+ .gate .gate-bottom{position:relative;inset:auto;display:block;flex-shrink:0;margin-top:24px;text-align:center}
+ .gate .parchment h1{font-size:clamp(2.15rem,10.6vw,3rem)}
+ .gate .vows li{font-size:.9375rem;line-height:1.65}
+ .gate .signature-button{height:148px}
+ .gate .signature-label{font-size:.625rem;letter-spacing:.04em;line-height:1.5}
+ .gate .hold-label{font-size:.9375rem}
+ .gate .sign-alternative{min-height:48px;font-size:.9375rem}
+ .gate .gate-status{font-size:1.125rem}
+ .gate .seal{right:-7px;width:64px;height:64px}
+ .masthead{height:auto;min-height:calc(88px + var(--phone-top));padding:calc(10px + var(--phone-top)) var(--phone-right) 10px var(--phone-left);align-items:center;gap:10px}
+ .masthead>a{max-width:44%;font-size:.625rem;line-height:1.6;letter-spacing:.08em;gap:8px}
+ .masthead>div{display:flex;flex-wrap:wrap;gap:0 8px;max-width:54%;justify-content:flex-end}
+ .masthead button{min-height:44px;padding:6px 4px}
+ #sound,#audio-settings-toggle{font-size:.75rem}
+ .hello{min-height:100svh;padding:calc(130px + var(--phone-top)) var(--phone-right) 88px var(--phone-left)}
+ .hero-content{width:100%;max-width:600px;margin:0 auto}
+ .hero-content>.eyebrow{font-size:.625rem;letter-spacing:.13em;line-height:1.8;max-width:90%}
+ .hello h2{font-size:clamp(3.4rem,15vw,6rem);line-height:1.02;letter-spacing:-.06em;margin:26px 0 32px}
+ .hello .red-period{display:none}
+ .hero-letter{padding-left:16px;max-width:100%;margin:0}
+ .hero-letter p{font-size:1rem;line-height:1.85;color:#d4ddcf}
+ .hero-letter .handwritten{font-size:1.6rem;line-height:1.35}
+ .hero-coordinate,.hero-side{display:none}
+ .scroll-invite{max-width:100%;margin:30px 0 0 16px;min-height:48px;font-size:.625rem;letter-spacing:.12em;gap:16px}
+ .scroll-invite span{flex-shrink:0}
+ .horizon-ship{width:90px;right:var(--phone-right);bottom:12px;opacity:.45}
+ .zoro-note{padding:28px var(--phone-right) 42px var(--phone-left);margin:0;font-size:1.4rem}
+ .chart-stage{height:100svh;min-height:0}
+ .chart-heading{top:calc(100px + var(--phone-top));left:var(--phone-left);right:var(--phone-right)}
+ .chart-heading h2{font-size:clamp(1.8rem,8vw,2.5rem);margin:12px 0}
+ .chart-heading>p:last-child{font-size:.875rem;line-height:1.7;max-width:34em}
+ .chart-heading>.eyebrow{font-size:.625rem;letter-spacing:.12em}
+ .navigation-table{width:calc(100% - var(--phone-left) - var(--phone-right));padding:12px}
+ .voyage-nav{top:calc(8px + var(--phone-top));left:var(--phone-left);right:var(--phone-right);max-width:none;min-height:58px;padding:4px 12px;gap:20px;overflow-x:auto;overflow-y:hidden;scroll-padding-inline:14px;scrollbar-width:none;overscroll-behavior-x:contain;touch-action:pan-x pan-y}
+ .voyage-nav::-webkit-scrollbar{display:none}
+ .voyage-nav a,.voyage-nav button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;font-size:.75rem;line-height:1.4;letter-spacing:.04em;white-space:nowrap;max-width:none;flex-shrink:0}
+ .voyage-nav a[aria-current=step]{box-shadow:inset 0 -2px 0 #bd9a58}
+ .voyage-nav button{margin-left:0;padding:8px 6px}
+ .chart-caption{bottom:calc(22px + var(--phone-bottom));left:var(--phone-left);right:var(--phone-right);font-size:.625rem;line-height:1.65;letter-spacing:.08em}
+ .chapter-progress{display:none}
+ .memory-sheet{width:calc(100% - var(--phone-left) - var(--phone-right));max-width:620px;margin-left:auto;margin-right:auto;padding:32px clamp(20px,6vw,32px) 28px;scroll-margin-top:calc(100px + var(--phone-top))}
+ .memory-sheet .sheet-meta{font-size:.625rem;letter-spacing:.08em}
+ .memory-sheet .sheet-title{font-size:clamp(1.75rem,7.8vw,2.3rem);line-height:1.18;margin:20px 0}
+ .memory-sheet .story{font-size:1rem;line-height:1.85}
+ .memory-sheet .story .yoga-line{font-size:1.65rem}
+ .memory-sheet .story>p:last-child{font-size:1.125rem}
+ .sheet-rule{margin-bottom:28px}
+ .sheet-end{flex-wrap:wrap;gap:8px 20px}
+ .sheet-end .next-leg-link{font-size:.75rem;min-height:48px;gap:14px;letter-spacing:.04em}
+ .memory-emblem{width:52px;height:52px;flex-basis:52px}
+ .sheet-heading-row{min-height:52px;gap:12px}
+ .sheet-heading-row .sheet-meta{max-width:calc(100% - 64px)}
+ .reading-guide{left:auto;right:var(--phone-right);bottom:calc(10px + var(--phone-bottom));max-width:calc(100% - var(--phone-left) - var(--phone-right));padding:2px 12px;gap:12px;box-shadow:0 6px 20px #0006}
+ .reading-guide>span{font-size:.625rem;letter-spacing:.06em}
+ .reading-guide button{min-height:48px;font-size:.875rem}
+ .memory-photo{margin:28px -4px 12px;padding:7px 7px 12px}
+ .memory-photo figcaption{font-size:1.25rem;padding-top:12px}
+ .transit-message{padding:20px 12px}
+ .transit-message>p:not(.eyebrow){font-size:1.35rem}
+ .audio-settings{top:calc(100px + var(--phone-top));right:var(--phone-right);width:min(340px,calc(100% - var(--phone-left) - var(--phone-right)));max-height:calc(100svh - 120px - var(--phone-top) - var(--phone-bottom));overflow-y:auto;overscroll-behavior:contain;padding:18px}
+ .audio-settings input{font-size:1rem}
+ #memory{width:calc(100% - var(--phone-left) - var(--phone-right));max-height:calc(100svh - 24px - var(--phone-top) - var(--phone-bottom));margin:auto;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+ #memory .memory-body{padding:60px 24px 32px}
+ #memory .memory-body h2{font-size:1.9rem;line-height:1.2}
+ #memory .close-memory{top:10px;width:48px;height:48px}
+ #memory::backdrop{backdrop-filter:none;background:#000e}
+ #next-horizon.treasure-ending{padding:12svh var(--phone-right) 10svh var(--phone-left)}
+ .treasure-leaf{padding:42px 25px 35px}
+ .treasure-leaf h2{font-size:1.9rem}
+ .farewell-ending{padding:20px var(--phone-right) calc(76px + var(--phone-bottom)) var(--phone-left);min-height:85svh}
+ .farewell-ending h2{font-size:clamp(1.65rem,7vw,2.2rem)}
+ .farewell-sea{max-width:100%;width:230px}
+ .farewell-sea>span{inset:25% 0 -10%}
+ .farewell-return{min-height:48px}
+}
+/* Short screens keep the same one-column story, with room for browser chrome. */
+@media(max-width:1000px) and (max-height:500px){
+ .gate{padding-top:calc(64px + var(--phone-top))}
+ .gate .parchment-mount{max-width:520px}
+ .hello{padding-top:calc(120px + var(--phone-top))}
+ .hello h2{font-size:4.5rem}
+ .hero-letter{max-width:540px}
+ .chart-heading{top:78px}.chart-heading h2{font-size:1.8rem;margin:8px 0}.chart-heading>p:last-child{display:none}
+ .chart-heading>.eyebrow{font-size:.6rem}
+ .navigation-table{width:min(660px,90%)}
+ .reading-guide>span{display:none}
+ .audio-settings{top:70px;max-height:calc(100svh - 85px - var(--phone-bottom))}
+}
+@media(hover:none) and (pointer:coarse){
+ .grain{opacity:.022}
+ .room-light{filter:none}
+ .table-lantern{display:none}
+ .atlas-destination{transition:none}
+}
+@media(prefers-reduced-motion:reduce){
+ .gate .parchment-mount{animation:none}
+}
