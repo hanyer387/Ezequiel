@@ -1,0 +1,70 @@
+/* A readable document travels over one sticky diorama. No nested scrolling. */
+.chart-section{height:auto;min-height:0;--camera-x:0px;--world-opacity:1;--island-label-opacity:1}
+.chart-stage{height:100svh;min-height:0;z-index:1}
+.voyage-track{position:relative;z-index:2;margin-top:-100svh;pointer-events:none}
+.voyage-leg{min-height:155svh;position:relative}
+.leg-label{position:absolute;bottom:12%;left:7%;color:#ccb887;opacity:calc(1 - var(--focus-progress,0));}
+.leg-label>span:first-child,.reading-direction{font-size:8px;letter-spacing:.2em}
+.leg-label p{font:italic 29px/1.2 var(--serif)}.leg-arrow{font-size:24px}
+.navigation-table{transform:translate3d(var(--camera-x),var(--camera-y),var(--camera-z)) rotateX(var(--camera-angle)) rotateZ(var(--camera-roll)) scale(var(--camera-scale));opacity:var(--world-opacity);}
+.voyage-nav{position:absolute;top:24px;left:5%;right:5%;display:flex;align-items:center;gap:25px;z-index:5;pointer-events:auto;padding:14px 18px;background:#050705e8;border:1px solid #bd9a5825;border-radius:3px}
+.voyage-nav a{font-size:9px;letter-spacing:.12em;color:#b9aa83;padding:8px 0;min-height:32px}
+.voyage-nav a span{padding-left:7px}.voyage-nav a[aria-current="step"]{color:#ffe0a0;text-shadow:0 0 20px #bd9a5844}
+.voyage-nav button{margin-left:auto;background:none;border:0;color:#c7b587;font-size:8px;letter-spacing:.13em;min-height:38px}
+.chart-heading{top:100px}.chart-caption{bottom:22px;z-index:4}
+.chart-scroll{opacity:var(--heading-opacity)}.chart-ready{opacity:calc(1 - var(--heading-opacity))}
+.island-pin{opacity:var(--island-label-opacity);top:72%;left:2%;width:96%;height:24%;border-radius:5px;min-height:44px}
+.island-pin strong{font-size:17px;line-height:1;margin:4px 0}.island-pin .island-number{font-size:5px}.island-pin small{font-size:5px}.island-pin .pin-dot{display:none}
+.island-pin::before{inset:0 -2%;background:radial-gradient(ellipse,#231c10de,transparent 75%)}
+.island-home::before{opacity:.16}.island-home:hover,.island-home:focus-within{transform:translateZ(32px)}
+.story-panel{position:relative;width:min(530px,43vw);margin-left:auto;margin-right:6%;padding:60px 42px;pointer-events:auto;color:#ded3b8;background:linear-gradient(135deg,#11170ef8,#070a07fa);border:1px solid #bd9a5830;border-top-color:#bd9a5866;box-shadow:0 18px 60px #0008;border-radius:3px}
+.story-panel h2{font:500 39px/1.18 var(--serif);letter-spacing:-.035em;margin:24px 0}.story-panel h2 em{color:#d3b879}.story-panel .eyebrow{font-size:8px;line-height:1.9;color:#bda36a}
+.voyage-reading{padding:0 0 12svh;position:relative}
+.reading-intro{min-height:65svh;display:flex;flex-direction:column;justify-content:center;scroll-margin-top:100px}
+.reading-intro .margin-note{font-size:25px;color:#bda36a;margin:24px 0}.reading-direction{color:#b4ba9a;margin-top:30px;line-height:1.8}
+.story-beat{min-height:75svh;margin-top:30svh;display:flex;flex-direction:column;justify-content:center}
+.beat-number{font-size:8px;letter-spacing:.2em;color:#9caa84;margin-bottom:20px}
+.story-panel .story{font-size:15px;line-height:1.95}.story-panel .story p{margin:16px 0}.story-panel .yoga-line{color:#dfc28c;font-size:32px;margin:24px 0}
+.story-panel .manga-panel{background:repeating-conic-gradient(from 20deg at 80% 50%,#243b3710 0deg 1deg,transparent 1deg 13deg),#e4d7b3;color:#243b37;border-color:#a18f65;margin:15px -15px 35px;padding-top:55px;box-shadow:3px 4px 0 #665637}
+.story-panel .manga-panel strong{font-size:29px}.story-panel .manga-sound{font-size:36px}
+.reading-outro{margin-top:30svh;min-height:65svh;display:flex;flex-direction:column;justify-content:center}
+.reading-outro .crew-note{margin:0 0 30px;border-color:#7c9562}.reading-outro .crew-note p{font-size:30px;color:#e7d3a5}.reading-outro .crew-note span{color:#a8b994}
+.ready-to-sail{font:18px/1.8 var(--serif);color:#b7b8a4}.next-leg-link,.back-route{font-size:9px;letter-spacing:.16em;display:inline-flex;align-items:center;justify-content:space-between;gap:30px;min-height:48px;margin-top:25px;padding:10px 0;border-bottom:1px solid #bd9a5866;color:#e0ca98}
+.departure-leg{min-height:150svh}.departure-message{position:absolute;top:90svh;left:8%;right:8%;text-align:center;opacity:var(--departure-text,0)}.departure-message h2{font:500 40px/1.2 var(--serif);color:#d8c28c}.departure-message .eyebrow{color:#a7b18e}
+.voyage-horizon{margin:0 auto 0;padding:65px;max-width:650px;width:80%;text-align:center;min-height:65svh;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.voyage-horizon>p:not(.eyebrow){font:18px/1.8 var(--serif);color:#c4c5af}.voyage-horizon h2{font-size:42px}
+.volcano-smoke{transform-box:fill-box;transform-origin:center bottom;animation:volcano-breath 7s ease-in-out infinite alternate}
+@keyframes volcano-breath{to{transform:translateY(-4px) scale(1.08);opacity:.3}}
+.chart-section:not(.scene-active) .volcano-smoke,.chart-section[data-phase="horizon"] .volcano-smoke{animation-play-state:paused}
+.boat-wake{opacity:var(--wake-opacity,1)}
+.boat-hull{transform-box:fill-box;transform-origin:center;}
+.chapter-progress{height:130px;right:22px}
+.atlas-destination{transition:color .3s,transform .3s}.atlas-destination:hover{transform:translateZ(28px)}
+#sailing-path,#departure-path{stroke-linecap:round}
+@media(max-width:900px){.story-panel{width:46vw;margin-right:4%;padding:38px 26px}.story-panel h2{font-size:31px}.story-panel .story{font-size:14px}}
+@media(max-width:700px){
+ .voyage-nav{top:12px;left:12px;right:12px;gap:14px;padding:8px 12px}.voyage-nav a{font-size:7px;letter-spacing:.04em}.voyage-nav a span{padding-left:3px}.voyage-nav button{font-size:6px;max-width:65px;line-height:1.6;padding:0}
+ .chart-heading{top:95px}.chart-heading h2{font-size:34px}.chart-caption{font-size:6px;bottom:32px;left:15px;right:15px}
+ .leg-label{left:23px;bottom:7%}.leg-label p{font-size:23px}.leg-label>span:first-child{font-size:6px}
+ .story-panel{width:calc(100% - 36px);margin-left:18px;margin-right:18px;padding:38px 27px;border-color:#bd9a5840;background:linear-gradient(125deg,#11170efc,#070a07fc)}
+ .reading-intro{min-height:62svh}.story-panel h2{font-size:31px}.story-panel .story{font-size:14px;line-height:1.95}.story-beat{min-height:70svh;margin-top:23svh}.story-panel .manga-panel{margin-left:-10px;margin-right:-10px}.story-panel .manga-panel strong{font-size:25px}.reading-outro{margin-top:23svh;min-height:65svh}.reading-outro .crew-note p{font-size:28px}
+ .island-pin{top:73%;left:-5%;width:110%;height:27%;min-height:36px}.island-pin strong{font-size:11px}.island-pin .island-number{font-size:3.5px}.island-pin small{font-size:3.5px}
+ .voyage-horizon{width:calc(100% - 36px);margin:0 18px;padding:45px 25px}.voyage-horizon h2{font-size:34px}.departure-message{top:95svh}.departure-message h2{font-size:29px}.chapter-progress{right:9px}
+}
+@media(prefers-reduced-motion:reduce){
+ .chart-stage{position:relative;height:auto;min-height:0;padding-top:110px}.chart-heading{top:auto}.camera-viewport{margin:30px 0 40px}.voyage-track{margin-top:0}.voyage-leg{min-height:0;padding:25px 0}.leg-label{position:relative;left:auto;bottom:auto;padding:25px;text-align:center}.leg-arrow{display:none}
+ .voyage-nav{top:20px;gap:15px}.voyage-reading{padding:20px 0}.story-panel{width:min(650px,calc(100% - 36px));margin:20px auto;min-height:0}.story-beat{margin-top:20px}.reading-intro,.reading-outro{min-height:0}.departure-leg{min-height:0}.departure-message{position:relative;inset:auto;opacity:1;padding:35px 20px}.voyage-horizon{min-height:0}.volcano-smoke{animation:none}.island-pin{opacity:1}
+}
+/* Global navigation stays above both the sticky world and the reading panels. */
+.voyage-nav{position:fixed;z-index:25;visibility:hidden;opacity:0;pointer-events:none;transition:opacity .25s}
+body.voyage-visible .voyage-nav{visibility:visible;opacity:1;pointer-events:auto}
+#memory-reading{scroll-margin-top:130px}
+@media(max-width:700px){#memory-reading{scroll-margin-top:100px}}
+@media(prefers-reduced-motion:reduce){.voyage-nav{position:fixed}}
+@media(prefers-reduced-motion:reduce){.navigation-table{transform:rotateX(10deg) rotateZ(-2deg) scale(.92);opacity:1;will-change:auto}}
+@media(max-width:700px){.voyage-nav{gap:10px}.voyage-nav a{font-size:9px;min-height:44px;display:inline-flex;align-items:center}.voyage-nav button{font-size:7px;min-height:44px;max-width:65px}}
+/* Promote the moving board near the viewport, rather than retaining its layer
+   throughout the greeting and footer. Direct transforms are written by voyage.js. */
+.navigation-table{will-change:auto}
+.chart-section.scene-active .navigation-table{will-change:transform}
+@media(prefers-reduced-motion:reduce){.chart-section.scene-active .navigation-table{will-change:auto}}

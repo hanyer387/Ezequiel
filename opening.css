@@ -1,0 +1,123 @@
+/* Module: opening only. No selectors or scroll state belonging to the atlas. */
+.gate{
+  display:flex;flex-direction:column;align-items:center;justify-content:flex-start;
+  padding:76px 24px 62px;overscroll-behavior:contain;
+  background:#000;perspective:1400px;transform:none;
+  transition:opacity .9s cubic-bezier(.22,.61,.36,1);
+}
+.gate[hidden]{display:none}
+.gate:focus{outline:none}
+.gate::before{width:min(1100px,110vw);height:1100px;top:45%;left:42%;background:radial-gradient(ellipse,#58744c22,transparent 65%)}
+.gate::after{width:700px;height:800px;top:0;right:-200px;background:radial-gradient(ellipse,#bd9a581b,transparent 66%)}
+.gate .gate-corner,.gate .gate-bottom{font-size:.65rem;letter-spacing:.2em;line-height:1.7;left:6%;right:6%;color:#bca77799;pointer-events:none}
+.gate .gate-corner{top:25px}.gate .gate-bottom{bottom:20px}
+.gate .parchment-mount{
+  position:relative;isolation:isolate;width:min(570px,100%);flex-shrink:0;margin:auto 0;
+  transform:perspective(1400px) rotateX(2deg) rotateZ(-1.1deg);
+  transition:transform .85s cubic-bezier(.22,.61,.36,1),opacity .65s;
+}
+.gate .parchment-mount::before{
+  content:'';position:absolute;inset:2px 0 -5px 2px;border-radius:3px;z-index:-1;
+  background:#8e7047;
+  box-shadow:0 1px 0 #e1c28d,1px 2px 0 #af8c5a,2px 4px 0 #735436,
+    0 12px 30px #000c,0 42px 85px #000,0 0 85px #bd9a580c;
+}
+.gate .parchment{
+  width:100%;max-width:none;padding:28px 42px 26px;margin:0;
+  border:1px solid #e1c18a;border-radius:3px;clip-path:none;transform:none;animation:none;
+  color:#344334;
+  box-shadow:inset 0 1px 0 #fff8,inset 0 -12px 30px #78562c1c,inset 10px 0 20px #81613d0d;
+}
+.gate .parchment::before{
+  content:'';position:absolute;inset:7px;pointer-events:none;border:1px solid #886b3a2b;border-radius:1px;
+  background:linear-gradient(100deg,transparent 47%,#84643809 49%,#fff4 50%,transparent 52%);
+}
+.gate .paper-rule{position:relative;font-size:.6rem;letter-spacing:.12em;border-bottom-color:#78684355;padding-bottom:14px;gap:12px}
+.gate .strawhat-mark{height:46px;margin:18px 0 12px}.gate .strawhat-mark svg{height:46px;width:74px}
+.gate .parchment>.eyebrow{font-size:.58rem;line-height:1.8;letter-spacing:.16em;margin:0 0 12px;color:#69704d}
+.gate .parchment h1{font-size:clamp(2.5rem,5.3vw,3.3rem);line-height:1.04;letter-spacing:-.045em;margin:12px 0 14px}
+.gate .parchment h1 em{color:#435a3d}
+.gate .intro-note{font-size:1.4rem;line-height:1.3;margin:0 0 24px;color:#6b634b}
+.gate .vows{position:relative;border-top:1px solid #78684344}
+.gate .vows li{font-size:.875rem;line-height:1.55;padding:12px 0;border-bottom-color:#7868432d;gap:14px}
+.gate .vows li span{font-size:.95rem;color:#8f7247;min-width:20px}
+.gate .signature-button{
+  position:relative;display:block;height:142px;margin:12px 0 0;width:100%;padding:0;
+  background:none;border:0;border-radius:4px;touch-action:none;
+}
+.gate .signature-button:focus-visible{outline:2px solid #536b45;outline-offset:5px}
+.gate .signature-art{position:absolute;width:min(280px,82%);height:90px;top:0;left:50%;transform:translateX(-50%) rotate(-3deg);overflow:visible}
+.gate .signature-art g{fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:2}
+.gate .signature-guide{stroke:#3443341b}
+.gate .signature-ink{stroke:#2c4638;stroke-width:2.4}
+.gate .signature-ink path{
+  stroke-dasharray:100;
+  stroke-dashoffset:calc(100 - clamp(0,(var(--progress) - var(--ink-start))*var(--ink-rate),1)*100);
+}
+.gate .signature-label{top:90px;left:0;right:0;font-size:.58rem;letter-spacing:.1em;color:#6a664d;line-height:1.6}
+.gate .hold-label{top:113px;left:0;right:0;font-size:.875rem;letter-spacing:.025em;text-transform:none;color:#435b3d}
+.gate .hold-label::after{display:none}
+.gate .signature-track{position:absolute;bottom:0;left:20%;right:20%;height:2px;background:#6b704b2b;overflow:hidden}
+.gate .signature-track>span{display:block;height:100%;background:#536b45;transform-origin:left;transform:scaleX(var(--progress))}
+.gate .sign-alternative{display:block;width:100%;min-height:44px;margin:5px 0 0;padding:10px;border:0;background:none;color:#62684b;font-size:.875rem;text-decoration:underline;text-decoration-color:#62684b50;text-underline-offset:4px}
+.gate .sign-alternative:hover{color:#2c4638;text-decoration-color:currentColor}
+.gate .sign-alternative:disabled{opacity:.4;cursor:default}
+.gate .gate-status{font-size:1.15rem;line-height:1.35;min-height:2.7em;margin:7px 0 0;display:flex;align-items:center;justify-content:center;color:#5c674a;text-align:center}
+.gate .seal{
+  width:88px;height:88px;right:-16px;bottom:116px;border:5px double #bd6952;
+  background:radial-gradient(circle at 35% 25%,#b5604c,#963e32 55%,#6e2925);
+  color:#edbd97;transform:translateY(-35px) scale(1.6) rotate(-22deg);opacity:0;
+  box-shadow:inset 0 2px 4px #f0b47855,inset 0 -5px 9px #43181199,
+    1px 2px 0 #66271d,2px 4px 0 #421b15,5px 9px 12px #0006;
+  transition:opacity .14s,transform .45s cubic-bezier(.18,.75,.25,1.2);
+}
+.gate .seal-emblem{position:absolute;inset:0;width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1;opacity:.24}
+.gate .seal span{position:relative;font:1.65rem var(--serif);line-height:1.1;text-shadow:0 1px 0 #64271f}
+.gate .seal small{position:relative;font-size:.53rem;letter-spacing:.13em;margin-top:4px}
+.gate.signed .seal{opacity:1;transform:translateY(0) scale(1) rotate(-13deg)}
+.gate[data-state=ready] .parchment-mount{animation:pact-arrive .9s cubic-bezier(.19,1,.22,1) backwards}
+.gate[data-state=sealed] .parchment-mount{animation:pact-impact .5s .12s ease-out backwards}
+.gate[data-state=signing] .signature-guide{stroke:#34433424}
+.gate.leaving{opacity:0;transform:none;pointer-events:none}
+.gate[data-state=leaving] .parchment-mount{transform:perspective(1400px) translate3d(0,-45px,80px) rotateX(7deg) rotateZ(-2deg);opacity:0}
+.gate .swords{left:5%;top:20%;opacity:.25;filter:none;pointer-events:none}
+.gate .swords i{width:230px;height:6px;box-shadow:0 1px 0 #b4c59e4a,0 4px 0 #080a07,0 10px 25px #000}
+.gate .log-pose{right:8%;top:27%;opacity:.3;transform:rotate(18deg);pointer-events:none}
+.journey-arriving .hero-content{animation:pact-greeting 1.4s cubic-bezier(.19,1,.22,1) backwards}
+@keyframes pact-arrive{from{opacity:0;transform:perspective(1400px) translate3d(0,25px,-30px) rotateX(7deg) rotateZ(-2.5deg)}to{opacity:1;transform:perspective(1400px) rotateX(2deg) rotateZ(-1.1deg)}}
+@keyframes pact-impact{0%,100%{transform:perspective(1400px) rotateX(2deg) rotateZ(-1.1deg)}25%{transform:perspective(1400px) translateY(2px) rotateX(1deg) rotateZ(-1.1deg)}}
+@keyframes pact-greeting{from{opacity:0;transform:translate3d(0,24px,0)}to{opacity:1;transform:translate3d(0,0,0)}}
+@media(max-width:700px){
+  .gate{padding:68px 18px 56px}
+  .gate .parchment{padding:24px 24px 20px}
+  .gate .paper-rule{font-size:.5rem;gap:8px;letter-spacing:.08em}
+  .gate .parchment>.eyebrow{font-size:.52rem;letter-spacing:.1em}
+  .gate .parchment h1{font-size:2.65rem}
+  .gate .intro-note{font-size:1.3rem;margin-bottom:20px}
+  .gate .vows li{font-size:.875rem;padding:11px 0;gap:10px}
+  .gate .seal{right:-11px;bottom:120px;width:72px;height:72px}
+  .gate .seal span{font-size:1.4rem}
+  .gate .signature-label{font-size:.52rem;letter-spacing:.055em}
+  .gate .log-pose{right:-35px;top:11%;opacity:.13}
+  .gate .swords{left:-110px;top:62%;opacity:.16}
+  .gate .gate-corner,.gate .gate-bottom{font-size:.55rem;letter-spacing:.1em}
+}
+@media(max-width:360px){.gate .parchment{padding:22px 19px 18px}.gate .parchment h1{font-size:2.4rem}.gate .seal{right:-7px}}
+@media(prefers-reduced-motion:reduce){
+  .gate,.gate .parchment-mount,.gate .seal{transition:none}
+  .gate .parchment-mount{transform:none}
+  .gate[data-state=leaving] .parchment-mount{transform:none}
+  .journey-arriving .hero-content{animation:none}
+}
+@media(min-width:701px) and (max-height:850px){
+  .gate{padding-top:56px;padding-bottom:42px}
+  .gate .parchment{padding:20px 36px 18px}
+  .gate .strawhat-mark{height:32px;margin:10px 0 7px}.gate .strawhat-mark svg{height:32px}
+  .gate .parchment h1{font-size:2.8rem;margin:10px 0}
+  .gate .intro-note{font-size:1.3rem;margin-bottom:16px}
+  .gate .vows li{padding:9px 0}
+  .gate .signature-button{height:130px;margin-top:8px}
+  .gate .signature-art{height:78px}
+  .gate .signature-label{top:78px}.gate .hold-label{top:101px}
+  .gate .gate-status{font-size:1.05rem;margin-top:4px;min-height:2.5em}
+}

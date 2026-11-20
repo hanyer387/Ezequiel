@@ -1,0 +1,25 @@
+/* Module 6: deliberate, optional sound; identical toggles before/after signing. */
+.opening-sound{position:absolute;z-index:3;top:18px;right:6%;min-height:44px;padding:8px 12px;border:1px solid #b49a5e44;border-radius:3px;background:#060b08;color:#cbbb91;font-size:.7rem;letter-spacing:.1em}
+.opening-sound span{margin-left:8px;color:#8ca178}
+.gate .gate-corner{max-width:calc(100% - 170px);right:auto}
+#sound[aria-pressed=true]{color:#c7d7ab}
+#audio-settings-toggle{font-size:.7rem;color:#a9b28e;min-height:44px}
+.audio-settings{position:fixed;z-index:35;top:85px;right:max(20px,5vw);width:min(330px,calc(100vw - 32px));padding:22px;background:#10170ff7;border:1px solid #a8935d66;color:#d4cba9;border-radius:4px;box-shadow:0 18px 50px #000b}
+.audio-settings[hidden]{display:none}
+.audio-settings>div{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.audio-settings h2{font:500 1.25rem/1.2 var(--serif);margin:0}
+#audio-settings-close{border:0;background:none;font-size:1rem;color:#c6b888;min-width:44px;min-height:44px;padding:0}
+.audio-settings label{font-size:.875rem;line-height:1.5;display:block;margin-top:20px}
+.audio-settings input[type=range]{display:block;width:100%;min-height:44px;margin-top:6px;accent-color:#a9b785;cursor:pointer}
+.audio-settings .effects-option{display:flex;gap:12px;align-items:center;min-height:44px;margin-top:5px}
+.audio-settings input[type=checkbox]{width:18px;height:18px;flex-shrink:0;accent-color:#a9b785}
+.audio-settings p{font-size:.8rem;line-height:1.5;color:#9ca88b;border-top:1px solid #a8935d33;padding-top:15px;margin:20px 0 0}
+@media(max-width:700px){
+ .opening-sound{right:18px;font-size:.65rem;top:14px;padding:8px}
+ .masthead{padding-left:20px;padding-right:20px;gap:10px}
+ .masthead>div{gap:12px;flex-wrap:wrap;justify-content:flex-end}
+ #audio-settings-toggle{font-size:.65rem}
+ .audio-settings{top:100px;right:16px}
+}
+#sound,#audio-settings-toggle,.opening-sound{font-size:.875rem}
+@media(max-width:700px){#sound,#audio-settings-toggle{font-size:.75rem}.opening-sound{font-size:.75rem}}

@@ -1,0 +1,24 @@
+/* Module 5: a physical island card opened from its source miniature. */
+#destination-dialog[open]{animation:none}
+#destination-dialog{width:min(820px,calc(100vw - 28px));border:1px solid #b69b69;border-radius:4px;box-shadow:0 1px 0 #ead3a2 inset,0 5px 0 #80623f,0 8px 0 #33291b,0 30px 100px #000c}
+#destination-dialog .memory-body{display:grid;grid-template-columns:160px 1fr;gap:16px 28px;padding:60px 40px 38px}
+#destination-dialog .memory-body> :not(.destination-art){grid-column:2}
+#destination-dialog .destination-art{grid-column:1;grid-row:1 / span 6;align-self:start;padding-top:15px;background:radial-gradient(ellipse at 50% 50%,#7f93511a,transparent 70%)}
+.destination-art svg{width:100%;height:auto;display:block;overflow:visible}
+#destination-dialog .eyebrow{font-size:.65rem;line-height:1.7;color:#777147;margin:0;letter-spacing:.13em}
+#destination-dialog h2{font:500 clamp(1.9rem,4vw,2.6rem)/1.1 var(--serif);letter-spacing:-.04em;margin:0}
+#destination-dialog .destination-lore{font-size:1rem;line-height:1.8;margin:0}
+#destination-dialog .crew-note{margin:18px 0;padding:0;border:0}
+#destination-dialog .crew-note span{font-size:.65rem;line-height:1.5;letter-spacing:.13em}
+#destination-dialog .crew-note p{font-size:1.5rem;line-height:1.35;margin:10px 0 0}
+#destination-dialog .margin-note{font-size:1.2rem;margin:0;line-height:1.4;color:#83704a}
+#destination-dialog .destination-back{justify-self:start;font-size:.8rem;min-height:48px;margin:0}
+#destination-dialog .destination-close{width:44px;height:44px;font-size:1rem;background:#e5d1a7}
+#destination-dialog[data-destination=arabasta] .destination-art{background:radial-gradient(ellipse,#ba8d3b22,transparent 70%)}
+#destination-dialog[data-destination=skypiea] .destination-art{background:radial-gradient(ellipse,#d3d9c844,transparent 70%)}
+@media(max-width:600px){
+ #destination-dialog .memory-body{grid-template-columns:1fr;padding:45px 26px 30px;gap:16px}
+ #destination-dialog .memory-body> :not(.destination-art){grid-column:1}
+ #destination-dialog .destination-art{grid-column:1;grid-row:auto;justify-self:center;width:150px;padding-top:0;margin-bottom:4px}
+ #destination-dialog .crew-note p{font-size:1.4rem}
+}

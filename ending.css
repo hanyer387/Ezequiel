@@ -1,0 +1,31 @@
+/* Small keepsakes on the existing parchment; no new scrolling controller. */
+.sheet-heading-row{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:72px;margin-bottom:6px}
+.memory-emblem{display:block;flex:0 0 76px;width:76px;height:76px;transform:rotate(5deg);opacity:.88}
+.memory-emblem svg{display:block;width:100%;height:100%}
+.sheet-heading-row .sheet-meta{max-width:calc(100% - 96px)}
+#memory-emblem:empty{display:none}
+#memory-emblem{display:flex;justify-content:flex-end;margin:-12px 0 10px}
+#memory-emblem .memory-emblem{width:68px;height:68px;flex-basis:68px}
+/* Preserve #next-horizon for the route's existing terminal measurement. */
+#next-horizon.treasure-ending{position:relative;isolation:isolate;width:100%;max-width:none;min-height:100svh;margin:0;padding:20svh 24px 16svh;background:#000;color:#384033;display:grid;place-items:center;border:0;box-shadow:none}
+.treasure-ending::before{content:'';position:absolute;left:0;right:0;top:-20svh;height:20svh;background:linear-gradient(transparent,#000);pointer-events:none}
+.treasure-leaf{position:relative;isolation:isolate;width:min(540px,100%);padding:72px 58px 46px;text-align:left;background-color:#e5d8b8;background-image:radial-gradient(ellipse at 0% 12%,#96713f33,transparent 32%),radial-gradient(ellipse at 100% 82%,#a0763a2e,transparent 34%),radial-gradient(ellipse at 18% 95%,#b3934e20,transparent 29%),radial-gradient(ellipse at 70% 0%,#fff2d726,transparent 46%);box-shadow:inset 0 0 5px #8d6c3e66,inset 0 0 26px #96713c26;transform:rotate(-.7deg);clip-path:polygon(.5% .7%,8% .4%,12% .7%,19% .2%,27% .5%,33% .3%,42% .6%,51% .1%,59% .5%,67% .2%,73% .6%,83% .3%,91% .6%,99.3% .4%,99.7% 9%,99.2% 18%,99.6% 27%,99.1% 34%,99.5% 43%,99.2% 52%,99.7% 62%,99.3% 72%,99.6% 83%,99.1% 91%,99.4% 99.2%,91% 99.6%,83% 99.1%,76% 99.5%,65% 99.3%,56% 99.7%,48% 99.2%,39% 99.6%,31% 99.3%,22% 99.7%,13% 99.2%,.6% 99.5%,.2% 91%,.6% 81%,.3% 73%,.7% 62%,.3% 52%,.6% 44%,.2% 34%,.6% 24%,.3% 14%)}
+.treasure-leaf::before{content:'';position:absolute;inset:0;pointer-events:none;z-index:-1;opacity:.095;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='paper'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%237b6746' filter='url(%23paper)' opacity='.75' d='M0 0h180v180H0z'/%3E%3C/svg%3E");mix-blend-mode:multiply}
+.treasure-leaf::after{content:'';position:absolute;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(ellipse 28px 80px at 0% 31%,#a27f4540,transparent),radial-gradient(ellipse 24px 60px at 100% 68%,#a27f4538,transparent),radial-gradient(ellipse 80px 10px at 28% 100%,#91703e2b,transparent);box-shadow:inset 1px 1px 0 #f8ecc777,inset -1px -1px 0 #8d744344}
+.treasure-leaf h2{position:relative;font:500 clamp(1.8rem,3vw,2.35rem)/1.2 var(--serif);letter-spacing:-.025em;color:#43503b;margin:0 0 30px;max-width:350px}
+.treasure-leaf>p{position:relative;font:1.05rem/1.95 var(--sans);margin:0 0 24px;color:#4b503b}
+.treasure-leaf .treasure-signature{font:2.15rem/1.2 var(--hand);margin:35px 0 0;color:#53613d;transform:rotate(-3deg)}
+.farewell-ending{position:relative;min-height:90svh;padding:4svh 24px max(100px,12svh);background:#000;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;color:#d8cba8}
+.farewell-sea{position:relative;width:min(300px,70vw);height:210px;margin:0 0 32px}
+.farewell-sea>span{position:absolute;inset:25% -30% -10%;background:radial-gradient(ellipse,#58744c12,transparent 68%)}
+.farewell-sea::after{content:'';position:absolute;bottom:20px;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,#bd9a5844,transparent)}
+.farewell-sea svg{position:relative;display:block;width:min(280px,100%);height:210px;margin:auto;opacity:1}
+.farewell-ending h2{font:500 clamp(1.65rem,3vw,2.8rem)/1.25 var(--serif);letter-spacing:-.025em;margin:0 0 18px;color:#e1d3b0}
+.farewell-next-game{font:1.15rem/1.6 var(--sans);color:#b8bd9e;margin:0 0 35px}
+.farewell-byline{font:1.7rem/1.4 var(--hand);color:#bca56f;margin:0 0 55px}
+.farewell-return{display:inline-flex;align-items:center;min-height:44px;font:0.875rem/1.4 var(--sans);padding:8px 0;color:#a3a58c;text-decoration:underline;text-underline-offset:6px;text-decoration-color:#bd9a5844}
+.farewell-return:hover{color:#e2d4af}
+@media(max-width:700px){.memory-emblem{width:62px;height:62px;flex-basis:62px}.sheet-heading-row{min-height:62px;gap:14px}.sheet-heading-row .sheet-meta{max-width:calc(100% - 76px)}#next-horizon.treasure-ending{padding:16svh 16px 12svh}.treasure-leaf{padding:53px 31px 40px}.treasure-leaf>p{font-size:1rem;line-height:1.85}.farewell-ending{min-height:80svh;padding-top:0}.farewell-sea{margin-bottom:30px}.farewell-next-game{font-size:1rem}}
+@media(prefers-reduced-motion:reduce){#next-horizon.treasure-ending{min-height:0;padding:70px 16px}.treasure-leaf{transform:none}.farewell-ending{min-height:0;padding:60px 24px 90px}}
+/* Let the final keepsake breathe after the route reaches its terminal anchor. */
+body:has(#chart[data-phase="horizon"]) .voyage-nav{visibility:hidden;opacity:0;pointer-events:none}

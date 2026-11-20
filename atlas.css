@@ -1,0 +1,53 @@
+/* Module 2: carved miniatures. Geometry lives in content/atlas/*.svg. */
+.map-sheet{border-color:#b49c655c;box-shadow:inset 0 1px 0 #d6bd8266,inset 0 0 45px #0007,1px 1px 0 #72613b,2px 2px 0 #3a3222,3px 3px 0 #695332,4px 4px 0 #2e2518,5px 5px 0 #524128,6px 6px 0 #221c12,10px 15px 15px #0009,20px 25px 40px #0007}
+.atlas-destination{
+  --land-height:26px;transform:translateZ(var(--land-height));transform-style:preserve-3d;
+  transition:transform .55s cubic-bezier(.22,.68,.15,1),color .3s;
+  -webkit-tap-highlight-color:transparent;
+}
+.atlas-destination .atlas-sculpture{display:block;width:100%;height:auto;margin:0 auto -5%;overflow:visible;filter:none}
+.atlas-destination .atlas-cast-shadow{transition:opacity .4s}
+.atlas-destination strong{font-size:clamp(12px,1.18vw,16px);line-height:1.2;color:#e2ce9d;text-shadow:0 2px 2px #13170f}
+.atlas-destination small{font-size:6px;letter-spacing:.07em;line-height:1.5;color:#b6b18b;max-width:95%;margin:5px auto 0}
+.atlas-destination:focus-visible{outline:2px solid #dec48b;outline-offset:5px;border-radius:4px}
+@media(hover:hover){
+  .atlas-destination:hover{transform:translateZ(calc(var(--land-height) + 15px)) translateY(-3px);color:#fff0c5}
+  .atlas-destination:hover .atlas-cast-shadow{opacity:.48}
+}
+.atlas-destination:focus-visible{transform:translateZ(calc(var(--land-height) + 12px))}
+.destination-foosha{--land-height:28px}.destination-shells{--land-height:31px}
+.destination-baratie{--land-height:16px;left:3%;top:52%;width:21%}
+.destination-loguetown{--land-height:25px;left:25%;top:66%}
+.destination-arabasta{--land-height:28px}.destination-skypiea{--land-height:64px}
+.island-home{transform-style:preserve-3d;transform:translateZ(32px)}
+.island-home .wood-island{position:relative;transform:translateZ(0);filter:none}
+.island-canopy{position:absolute;inset:0;width:100%;height:auto;overflow:visible;pointer-events:none;transform:translateZ(19px);transition:transform .6s cubic-bezier(.22,.68,.15,1)}
+@media(hover:hover){.island-home:hover .island-canopy{transform:translateZ(26px)}}
+.island-home:focus-within .island-canopy{transform:translateZ(26px)}
+.island-home .island-pin{transform:translateZ(27px);border-radius:3px;height:auto;min-height:64px;padding:10px 4px;top:78%;left:0;width:100%;background:linear-gradient(#151d12e8,#121a10dc);border:1px solid #a28f5b66;box-shadow:0 3px 0 #14170f,0 6px 12px #0005}
+.island-home .island-pin::before{display:none}
+.island-home .island-pin strong{font-size:clamp(14px,1.45vw,21px);line-height:1.05;margin:5px 0}
+.island-home .island-pin strong span{display:none}
+.island-home .island-number{font-size:clamp(6px,.65vw,9px);color:#b8c29a}
+.island-home .island-pin small{font-size:clamp(5px,.55vw,8px);color:#d3c99d}
+.island-home .island-pin:hover{transform:translateZ(29px);color:#fff0c5}
+#voyage-ship{pointer-events:none}
+.ship-sail{transform-box:fill-box;transform-origin:0 100%}
+#sailing-path,#departure-path{stroke:#e4d0a0;stroke-width:2.2;stroke-linecap:round}
+.route-silhouette{stroke:#bea365;stroke-opacity:.3}
+@media(max-width:700px){
+  .atlas-destination strong{font-size:12px;line-height:1.15}
+  .atlas-destination small{display:none}
+  .atlas-destination .atlas-sculpture{margin-bottom:-2%}
+  .destination-baratie{left:0;top:46%;width:27%}
+  .destination-loguetown{left:25%;top:62%}
+  .island-home .island-pin{top:84%;left:-9%;width:118%;padding:8px 3px;min-height:54px}
+  .island-home .island-pin strong{font-size:14px}
+  .island-home .island-number{font-size:5px}.island-home .island-pin small{font-size:5px}
+  .destination-skypiea{--land-height:42px}
+  .map-bottom{font-size:5px;letter-spacing:.06em;line-height:1.5}
+}
+@media(prefers-reduced-motion:reduce){
+  .atlas-destination:hover,.atlas-destination:focus-visible{transform:translateZ(var(--land-height))}
+  .island-home:hover .island-canopy,.island-home:focus-within .island-canopy{transform:translateZ(19px)}
+}

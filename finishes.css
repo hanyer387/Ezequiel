@@ -1,0 +1,11 @@
+/* Four small finishing effects, implemented with native animation APIs. */
+.table-lantern{position:absolute;left:0;top:0;width:400px;height:340px;pointer-events:none;border-radius:50%;background:radial-gradient(ellipse,#f0d09924, #d4b46c10 35%,transparent 68%);opacity:0;transform:translate3d(50%,50%,85px);transition:opacity .18s;z-index:3}
+.memory-sheet{transform-origin:8% 75%}
+.sheet-curl{--turn:0;position:absolute;right:-1px;bottom:-1px;width:85px;height:100px;pointer-events:none;z-index:2;opacity:calc(var(--turn)*.8);transform-origin:100% 100%;transform:perspective(600px) rotateY(calc(var(--turn)*-24deg)) rotateX(calc(var(--turn)*10deg));background:linear-gradient(135deg,transparent 49%,#a48a5866 50%,#e5d1a7 52%,#f2e3c4 85%);clip-path:polygon(100% 0,100% 100%,0 100%)}
+#greeting .greeting-word,#greeting .red-period{display:inline-block}
+#greeting em{background:none}
+#greeting em .greeting-word{background:linear-gradient(115deg,#fff1c9 0%,#e5cc94 48%,#8e7441 100%);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.journey-arriving .hero-content{animation:none}
+@media(max-width:700px){.sheet-curl{width:55px;height:65px}}
+@media(hover:none),(pointer:coarse){.table-lantern{display:none}}
+@media(prefers-reduced-motion:reduce){.table-lantern,.sheet-curl{display:none}.journey-arriving .hero-content{animation:none}}
